@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from .models import Product
+from .models import Group
 
 # Create your views here.
 def index(request):
-    products = Product.objects.all
-    context = {'products':products}
+    groups = Group.objects.all()
+    context = {'groups': groups}
     return render(request, 'api/index.html', context)
