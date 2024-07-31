@@ -3,5 +3,5 @@ from .views import index, my_profile
 
 urlpatterns = [
     path('', index, name='home'),
-    path('my_profile', my_profile, name='my_profile'),
+    path('my_profile/<pk>', my_profile, name='my_profile'),
 ]
