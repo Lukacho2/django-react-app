@@ -12,10 +12,10 @@ def my_profile(request):
     user = request.user
 
     # Get user details
-    f_name = user.first_name
-    l_name = user.last_name
-    description = user.profile.description  # Assuming there's a related Profile model
-    registered_in = user.date_joined
+    f_name = user.firstname
+    l_name = user.lastname
+    description = user.description  # Assuming there's a related Profile model
+    registered_in = user.registered_in
     groups = user.groups.all()
 
     # Prepare context
@@ -27,4 +27,4 @@ def my_profile(request):
         'groups': groups
     }
 
-    return render(request, 'profile.html', context)
+    return render(request, 'myprofile.html', context)
